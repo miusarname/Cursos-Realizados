@@ -1,7 +1,19 @@
 fun main() {
    println(queMeses(5))
    println(aQueTrimestrePer(12))
+   println(semestre(11973))
+   print(tipoDeVar(5/2))
 }
+
+fun semestre(mes:Int):String{
+    return when(mes){
+    in 1..6->"Primer semestre"
+    in 7..12->"Segundo semestre"
+    !in 1..12->"Semestre no encontrado"
+    else->"not F"
+  }
+}
+
 
 fun queMeses(mes:Int):String{
      return when(mes){
@@ -29,4 +41,13 @@ fun aQueTrimestrePer(mes:Int):String{
     in 10..12->"Cuarto trimestre"
     else->"No hay más trimestres conocidos..."
   }
+}
+
+fun tipoDeVar(tipo:Any):String{
+    return when (tipo){
+        is String -> "Es una variable de tipo String"
+        is Int -> "Es un numero"
+        is Boolean->"Es un boleano"
+        else->"No es de tipo aceptado..."
+    }
 }
